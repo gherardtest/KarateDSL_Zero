@@ -1,6 +1,7 @@
 Feature: Delete user on reqres
 
   Scenario: Delete a user
-    Given url "https://reqres.in/" + "api/users/" + "2"
+    * call read("../post/user_post_snippets.feature@Create")
+    Given url "https://reqres.in/" + "api/users/" + contactId
     When method delete
     Then status 204
